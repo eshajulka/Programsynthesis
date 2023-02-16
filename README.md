@@ -1,1 +1,2 @@
-# Programsynthesis
+# Program Synthesis
+Homework assignments
