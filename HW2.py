@@ -11,12 +11,14 @@ def check(program, examples):
 
 def synthesis(examples):
     for i in range(1, 5):
-        op_combo = itertools.product(['+', '-', '*', '//'], repeat=i)
+        operations = ['+', '-', '*', '//'] #grammar
+        op_combo = itertools.product(operations, repeat=i)
         nums = itertools.product(range(1, 11), repeat=i+1):
         #find the cartesian product of the operands - all possible combinations
         for ops in ob_combo:
             for operands in nums:
-                program = [str(x) + op for x, op in zip(operands[:-1], ops)]
+                num_ops = zip(operands[:-1], ops)
+                program = [str(x) + op for x, op in num_ops]
                 #zip pairs the first item in each iterator together (num and operand)
                 program = ' '.join(program) + str(operands[-1])
                 if check(program, examples):
