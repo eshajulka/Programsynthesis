@@ -11,9 +11,9 @@ def check(program, examples):
 
 def synthesis(examples):
     for i in range(1, 5):
-        operations = ['+', '-', '*', '//'] #grammar
+        operations = ['+', '-', '*', '/'] #grammar
         op_combo = itertools.product(operations, repeat=i)
-        nums = itertools.product(range(1, 11), repeat=i+1):
+        nums = itertools.product(range(1, 11), repeat=i+1)
         #find the cartesian product of the operands - all possible combinations
         for ops in ob_combo:
             for operands in nums:
