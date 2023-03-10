@@ -1,0 +1,34 @@
+; Variable declarations
+(declare-const idx0 Int) ;top left
+(declare-const idx1 Int) ;top right
+(declare-const idx2 Int) ;bottom left
+(declare-const idx3 Int) ;bottom right
+
+; Constraints
+(assert (> idx0 0))
+(assert (> idx1 0))
+(assert (> idx2 0))
+(assert (> idx3 0))
+
+(assert (< idx0 5))
+(assert (< idx1 5))
+(assert (< idx2 5))
+(assert (< idx3 5))
+
+;all numbers have to be between 1 and 4
+
+(assert (distinct idx0 idx1 idx2 idx3)) ;all numbers must be different
+
+(assert (not (= idx0 idx1))) ; The first row contains different numbers
+(assert (not (= idx2 idx3))) ; The second row contains different numbers
+(assert (not (= idx0 idx2))) ; The first column contains different numbers
+(assert (not (= idx1 idx3))) ; The second column contains different numbers
+(assert (not (= idx0 idx3)))
+(assert (not (= idx1 idx2)))
+
+
+; Solve
+(check-sat)
+(get-model)
+
+#test on https://compsys-tools.ens-lyon.fr/z3/index.php
