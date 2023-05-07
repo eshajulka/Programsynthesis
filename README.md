@@ -1,2 +1,2 @@
 # Program Synthesis
-Homework assignments
+The final project notebook has code that details a solution to finding the 'perfect panagram' of any NYT Spelling Bee. You just type in the 7 letters that appear in the daily Spelling Bee and then wait ....maybe 30 minutes.... and you will have an answer! Program synthesis and specifically Z3 was not the most efficient way to go about this task at all, however it provided a fun way to approach a common query problem. I read Z3 documentation on string and set theory to ultimately decide the best ways to permutate the letters and combine them into words that would be checked by python's english dictionary.
