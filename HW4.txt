@@ -1,0 +1,17 @@
+#lang rosette
+
+(require rosette/lib/synthax)
+
+(define (maxmimum lst)
+  (foldl (lambda (x y) (if (> x y) x y)) (first lst) (next lst))) #checks if first item of list is larger
+
+(define (synth-func lst)
+  (let ([n (length lst)])
+    (define-symbolic fun (-> (Listof Integer) Integer))
+    (define synth-prob
+      (assert (= (fun lst) (maxmimum lst))))
+    (synthesize (list fun) (list synth-prob))
+    ))
+    
+    
+    #this program synthesizes a python function to find the max val in a list
